@@ -1,26 +1,14 @@
 <template>
   <div>
-    <h2>Home</h2>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis amet
-      voluptas eius voluptate maxime perspiciatis, adipisci delectus porro,
-      quisquam dignissimos nulla maiores, consectetur itaque eaque modi est
-      tenetur nisi? Veniam eveniet mollitia aperiam similique inventore illum.
-      Exercitationem vero explicabo tenetur ipsum nostrum ducimus, quas sunt
-      rerum dignissimos, mollitia aliquam porro.
-    </p>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque et
-      atque sequi quibusdam nisi, suscipit nemo ab commodi. Recusandae
-      voluptatibus delectus quas nulla quo asperiores enim fugit, voluptatem
-      maiores aut molestias cumque doloremque perferendis aperiam veritatis,
-      eaque fugiat fuga nemo tempore eius? Ad magnam officia recusandae quam
-      beatae similique.
-    </p>
+    <h2>From the backend Nuxt api:</h2>
+    <p>{{ data }}</p>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+// const { data } = await useFetch('/api/ninja?name=mario') -- a GET request
+const { data } = await useFetch('/api/ninja')
+</script>
 
 <style scoped>
 h2 {

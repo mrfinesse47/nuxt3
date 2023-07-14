@@ -7,6 +7,10 @@
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
+          <li>
+            <NuxtLink to="/products/65r7685" class="btn">Dead Link</NuxtLink>
+            <!-- the dead link is to demonstrate error handling for bad route -->
+          </li>
         </ul>
       </nav>
     </header>

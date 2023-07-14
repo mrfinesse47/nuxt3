@@ -20,7 +20,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+  layout: 'products',
+  // the way to specify a different layout
+})
+</script>
 
 <style scoped>
 h2 {

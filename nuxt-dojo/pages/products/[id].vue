@@ -1,14 +1,7 @@
 /products/:id
 
 <template>
-  <div>
-    <p>Product Details for: {{ id }}</p>
-    <p>
-      {{ product.title }}
-    </p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.id }}</p>
-  </div>
+  <ProductDetails :product="product" />
 </template>
 
 <script setup>

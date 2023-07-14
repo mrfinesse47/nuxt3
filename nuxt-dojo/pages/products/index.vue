@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="grid grid-cols-4 gap-5">
-      <div v-for="p in products" class="hover:cursor-pointer">
-        <NuxtLink :to="`/products/${p.id}`">{{ p.title }}</NuxtLink>
+      <div v-for="p in products">
+        <ProductCard :product="p" />
+        <!-- you dont need to import components, Nuxt does that for us -->
       </div>
     </div>
   </div>

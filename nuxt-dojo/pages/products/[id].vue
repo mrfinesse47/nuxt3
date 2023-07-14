@@ -3,6 +3,7 @@
     <Head>
       <Title>Nuxt Dojo | {{ product.title }}</Title>
       <Meta name="description" :content="product.description" />
+      <!-- another way of getting at the head -->
     </Head>
 
     <ProductDetails :product="product" />

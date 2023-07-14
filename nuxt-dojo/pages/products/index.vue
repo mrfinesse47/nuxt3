@@ -20,6 +20,12 @@ definePageMeta({
 const { data: products } = await useFetch('https://fakestoreapi.com/products')
 // note since this code can fire on the server you may run into trouble with using things only
 // available to the browser such as the window object.
+
+useHead({
+  title: 'Nuxt Dojo | Merch',
+  // overrides header data defined in nuxt.config
+  meta: [{ name: 'description', content: 'Nuxt 3 merch' }],
+})
 </script>
 
 <style scoped>

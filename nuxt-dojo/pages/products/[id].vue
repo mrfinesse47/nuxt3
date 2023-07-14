@@ -4,18 +4,22 @@
   <div>
     <p>Product Details for: {{ id }}</p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae distinctio
-      earum adipisci cumque suscipit beatae alias ea unde, eveniet nihil
-      recusandae, totam delectus fuga quod? Saepe eius sunt dicta cum
-      repudiandae itaque impedit repellat. Similique ab, sequi architecto maxime
-      nulla dolorum quisquam eius, dolores quod vitae doloremque quis rerum
-      voluptate!
+      {{ product.title }}
     </p>
+    <p>{{ product.price }}</p>
+    <p>{{ product.id }}</p>
   </div>
 </template>
 
 <script setup>
 const { id } = useRoute().params
+const uri = 'https://fakestoreapi.com/products/' + id
+
+//fetch product
+
+const { data: product } = await useFetch(uri, { key: id })
+// nuxt wont grab a different prod unless we specify a key
+
 definePageMeta({
   layout: 'products',
 })

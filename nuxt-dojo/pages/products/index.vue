@@ -1,22 +1,10 @@
 <template>
   <div>
-    <h2>/products</h2>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis amet
-      voluptas eius voluptate maxime perspiciatis, adipisci delectus porro,
-      quisquam dignissimos nulla maiores, consectetur itaque eaque modi est
-      tenetur nisi? Veniam eveniet mollitia aperiam similique inventore illum.
-      Exercitationem vero explicabo tenetur ipsum nostrum ducimus, quas sunt
-      rerum dignissimos, mollitia aliquam porro.
-    </p>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque et
-      atque sequi quibusdam nisi, suscipit nemo ab commodi. Recusandae
-      voluptatibus delectus quas nulla quo asperiores enim fugit, voluptatem
-      maiores aut molestias cumque doloremque perferendis aperiam veritatis,
-      eaque fugiat fuga nemo tempore eius? Ad magnam officia recusandae quam
-      beatae similique.
-    </p>
+    <div class="grid grid-cols-4 gap-5">
+      <div v-for="p in products" class="hover:cursor-pointer">
+        <NuxtLink :to="`/products/${p.id}`">{{ p.title }}</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,6 +13,12 @@ definePageMeta({
   layout: 'products',
   // the way to specify a different layout
 })
+// nuxt by default allows async code in setup scripts
+
+//fetch products
+const { data: products } = await useFetch('https://fakestoreapi.com/products')
+// note since this code can fire on the server you may run into trouble with using things only
+// available to the browser such as the window object.
 </script>
 
 <style scoped>

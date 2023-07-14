@@ -15,4 +15,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    currencyKey: process.env.API_KEY,
+    public: {
+      // if we want to expose to the front end
+    },
+  },
 })

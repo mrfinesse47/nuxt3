@@ -7,7 +7,7 @@
 
 <script setup>
 // const { data } = await useFetch('/api/ninja?name=mario') -- a GET request
-const { data } = await useFetch('/api/ninja')
+const { data } = await useFetch('/api/currency/CAD')
 </script>
 
 <style scoped>

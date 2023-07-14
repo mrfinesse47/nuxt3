@@ -7,8 +7,11 @@ export default defineEventHandler(async (request) => {
   //   const { age } = await readBody(request)
 
   //   API call with private key, use $fetch for server routes
+
+  const { currencyKey } = useRuntimeConfig()
   const { data } = await $fetch(
-    `https://api.currencyapi.com/v3/latest?apikey=${process.env.API_KEY}`
+    `https://api.currencyapi.com/v3/latest?apikey=${currencyKey}`
+    // better than using process.env here, get it from runtime config
   )
   return data
 })
